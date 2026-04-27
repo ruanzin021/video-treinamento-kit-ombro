@@ -1,0 +1,307 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("../img/Logo_Engenharia_clinica_niteroi_dor.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Camada para melhorar leitura sobre a logo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 23, 53, 0.45);
+  z-index: 0;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #2d3748;
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.header-content i {
+  font-size: 20px;
+  color: #1d4f91;
+}
+
+.header-content h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2d3d;
+}
+
+.hospital-name {
+  font-size: 13px;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+/* Conteúdo principal */
+.video-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Blocos com vidro fosco */
+.training-info,
+.training-details,
+.app-footer {
+  background: rgba(10, 24, 48, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Info do treinamento */
+.training-info {
+  text-align: center;
+  border-radius: 18px;
+  padding: 18px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.training-info h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.training-info p {
+  font-size: 14px;
+  color: #e6edf7;
+  line-height: 1.45;
+}
+
+/* Vídeo */
+.mobile-video-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  position: relative;
+}
+
+/* Poster e player com o mesmo tamanho */
+.video-poster,
+.video-player-wrapper {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  background: #000;
+}
+
+.video-poster img,
+.mobile-video-iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 0;
+}
+
+/* Botão play central */
+.poster-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.72);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.poster-play:active {
+  transform: translate(-50%, -50%) scale(0.95);
+  background: rgba(0, 0, 0, 0.88);
+}
+
+/* Ocultação segura */
+[hidden] {
+  display: none !important;
+}
+
+/* Detalhes */
+.training-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item i {
+  display: block;
+  font-size: 18px;
+  color: #8fc3ff;
+  margin-bottom: 6px;
+}
+
+.detail-item span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #eef4ff;
+  font-weight: 500;
+}
+
+/* Rodapé */
+.app-footer {
+  text-align: center;
+  padding: 14px 16px 18px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-footer p {
+  font-size: 12px;
+  color: #dbe7ff;
+  margin-bottom: 2px;
+}
+
+.app-footer small {
+  font-size: 10px;
+  color: #b9c8e6;
+}
+
+/* Animação suave */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.training-info,
+.mobile-video-container,
+.training-details {
+  animation: slideUp 0.35s ease-out;
+}
+
+/* iPhones menores */
+@media (max-width: 375px) {
+  .video-main {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .training-info h2 {
+    font-size: 18px;
+  }
+
+  .training-info p {
+    font-size: 13px;
+  }
+
+  .poster-play {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+  }
+
+  .detail-item span {
+    font-size: 10px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .app-container {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .training-info h2 {
+    font-size: 22px;
+  }
+
+  .training-info p {
+    font-size: 15px;
+  }
+
+  .detail-item span {
+    font-size: 12px;
+  }
+}
